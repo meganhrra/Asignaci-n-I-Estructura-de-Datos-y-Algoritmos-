@@ -47,10 +47,6 @@ public:
     }
 
     void cargarDatos() {
-        // Inventario actual de la empresa con 6 almacenes y 15 productos.
-        // Producto 7 en Alm 3 esta agotado (0) y Producto 12 en Alm 2
-        // esta por debajo del umbral (5). El algoritmo redistribuye
-        // desde los almacenes con excedente para resolver los deficits.
         int datosStock[CANT_ALMACENES][CANT_PRODUCTOS] = {
             //P0  P1  P2  P3  P4  P5  P6  P7  P8  P9  P10 P11 P12 P13 P14
             { 50, 30, 15, 40, 25, 18, 35, 20, 22, 28, 16, 45, 10, 12, 38}, // Alm 0
@@ -61,9 +57,6 @@ public:
             { 30, 22, 18, 25, 15, 20, 22, 10, 12, 28, 18, 30, 15, 22, 14}  // Alm 5
         };
 
-        // Matriz de distancias. Los valores clave:
-        //   distancia[0][3] = 7  -> costo de mover Producto 7 = 10 * 7 = 70
-        //   distancia[5][2] = 5  -> costo de mover Producto 12 = 5 * 5 = 25
         int datosDist[CANT_ALMACENES][CANT_ALMACENES] = {
             {0,  4,  6,  7,  8,  9 },
             {4,  0,  3,  6,  7,  8 },
