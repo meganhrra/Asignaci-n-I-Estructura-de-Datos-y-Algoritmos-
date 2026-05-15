@@ -160,13 +160,6 @@ public:
         }
     }
 
-    void restaurarEstadoInicial()
-    {
-        cantidad = 0;
-        precargarHabitaciones();
-        cout << "\nHotel restaurado al estado inicial (15 habitaciones)." << endl;
-    }
-
     int buscarPorNumero(int numero) const
     {
         for (int i = 0; i < cantidad; i++)
@@ -466,7 +459,6 @@ int main()
         cout << "5. Mostrar habitaciones disponibles por tipo" << endl;
         cout << "6. Habitacion mas cara disponible" << endl;
         cout << "7. Listar todas las habitaciones" << endl;
-        cout << "8. Restaurar estado inicial (15 habitaciones)" << endl;
         cout << "0. Salir" << endl;
         cout << "Opcion: ";
         cin >> opcion;
@@ -480,7 +472,6 @@ int main()
             case 5: hotel.mostrarDisponiblesPorTipo(); break;
             case 6: hotel.habitacionMasCaraDisponible(); break;
             case 7: hotel.listarTodas(); break;
-            case 8: hotel.restaurarEstadoInicial(); break;
             case 0: cout << "\nSaliendo del sistema..." << endl; break;
             default: cout << "Opcion invalida. Intente de nuevo." << endl;
         }
